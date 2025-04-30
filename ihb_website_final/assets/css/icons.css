@@ -1,0 +1,51 @@
+/* Ícones da metodologia DAET */
+.icon-diagnostic {
+    background-image: url('../images/ihb_icon_1 - s: fundo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+}
+
+.icon-architecture {
+    background-image: url('../images/ihb_icon_2 - s: fundo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+}
+
+.icon-execution {
+    background-image: url('../images/ihb_icon_3 - s: fundo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+}
+
+.icon-traction {
+    background-image: url('../images/ihb_icon_4 - s: fundo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+}
+
+/* Ícone do WhatsApp */
+.whatsapp-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
