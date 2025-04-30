@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Formulário de contato
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+        /*contactForm.addEventListener('submit', function(e) {
+            e.preventDefault()
             
             // Simulação de envio de formulário
             const submitButton = this.querySelector('button[type="submit"]');
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     }
-    
+    */
     // Formulário de newsletter
     const newsletterForm = document.getElementById('newsletterForm');
     if (newsletterForm) {
