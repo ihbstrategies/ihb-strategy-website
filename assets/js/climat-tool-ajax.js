@@ -254,7 +254,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         recommendations.splice(3);
         const recommendationsHTML = recommendations.map(rec => `<div class="recommendation-item"><h4>${rec.title}</h4><p>${rec.description}</p></div>`).join('');
-        document.getElementById('recommendations').innerHTML = recommendationsHTML;
+        const recommendationsDiv = document.getElementById('recommendationList'); // Corrected ID
+        if (recommendationsDiv) {
+            recommendationsDiv.innerHTML = recommendationsHTML;
+        } else {
+            console.warn("Element with ID 'recommendationList' not found in HTML. Recommendations not displayed.");
+        }
     }
 
     // Helper function to scroll to top of form
@@ -265,3 +270,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
