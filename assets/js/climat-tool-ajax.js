@@ -231,7 +231,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // For brevity here, just using placeholders. Ensure the full text is in the actual file.
         if (totalPercent < 30) { category = "Inicial"; description = "Sua operação está em estágio inicial de maturidade. Há muitas oportunidades para implementar processos estruturados e adotar tecnologias que podem transformar significativamente seus resultados."; } else if (totalPercent < 50) { category = "Em Desenvolvimento"; description = "Sua operação já possui alguns elementos de maturidade, mas ainda há lacunas importantes a serem preenchidas para alcançar todo o potencial do seu negócio."; } else if (totalPercent < 70) { category = "Intermediário"; description = "Sua operação demonstra boa maturidade em várias áreas, mas ainda há espaço para otimização e integração mais profunda entre processos e tecnologia."; } else if (totalPercent < 90) { category = "Avançado"; description = "Sua operação possui alta maturidade, com processos bem estruturados e boa adoção tecnológica. Refinamentos específicos podem levar a resultados ainda melhores."; } else { category = "Excelência"; description = "Sua operação demonstra excelência operacional, com processos otimizados e uso avançado de tecnologia. O foco agora deve ser na inovação contínua e na expansão estratégica."; }
 
-        document.getElementById('resultCategory').innerHTML = `<h3>Categoria: ${category}</h3><p>${description}</p>`;
+        document.getElementById('maturityLevel').textContent = category;
+        document.getElementById('maturityDescription').textContent = description;
         
         generateRecommendations(techScores, procScores);
 
@@ -264,4 +265,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
