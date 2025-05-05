@@ -1,0 +1,471 @@
+/* Estilos específicos para a ferramenta CLIMAT */
+
+/* Hero Section */
+.climat-hero {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 180px 0 80px;
+    text-align: center;
+}
+
+.climat-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.climat-hero h1 {
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.climat-hero h2 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.climat-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Tool Section */
+.climat-tool {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.climat-tool-intro {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.climat-image {
+    flex: 1;
+    max-width: 45%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.climat-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.climat-text {
+    flex: 1;
+}
+
+.climat-text h2 {
+    margin-bottom: 20px;
+}
+
+.climat-text ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.climat-text li {
+    margin-bottom: 10px;
+}
+
+/* Form Styles */
+.climat-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.form-section h3 {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.section-description {
+    margin-bottom: 30px;
+    color: var(--text-gray);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-green);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+/* Question Groups */
+.question-group {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.question-group h4 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.question-group p {
+    margin-bottom: 20px;
+    color: var(--text-gray);
+}
+
+/* Rating Scale */
+.rating-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.rating-option {
+    position: relative;
+    text-align: center;
+}
+
+.rating-option input[type="radio"] {
+    display: none;
+}
+
+.rating-option label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rating-option input[type="radio"]:checked + label {
+    background-color: var(--accent-green);
+    color: white;
+}
+
+.rating-option .tooltip {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.rating-option .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--primary-color) transparent transparent transparent;
+}
+
+.rating-option:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: 55px;
+}
+
+/* Results Section */
+#results {
+    text-align: center;
+}
+
+/* Styles from old CSS for results layout */
+.results-summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.result-score {
+    text-align: center;
+    /* Added flex properties for better alignment if needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #f5f5f5; /* Light gray background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px auto;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-green); /* Accent green for the number */
+    position: relative;
+}
+
+/* Removed the ::before pseudo-element for the inner border */
+.score-circle::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 5px solid var(--accent-green);
+    opacity: 0.3;
+}
+
+.result-details {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: left; /* Align details to the left */
+}
+
+.result-axis {
+    margin-bottom: 20px; /* Reduced margin */
+}
+
+.result-axis h4 {
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.score-bar {
+    height: 25px; /* Slightly reduced height */
+    background-color: #e9ecef; /* Lighter gray for the bar background */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative; /* Needed for text positioning */
+}
+
+.score-fill {
+    height: 100%;
+    background-color: var(--accent-green);
+    border-radius: 15px;
+    transition: width 1s ease;
+    display: flex; /* Use flex to center text */
+    align-items: center;
+    justify-content: flex-end; /* Align text to the right */
+    padding-right: 10px; /* Padding for text */
+    color: white; /* White text */
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+/* Maturity Level / Category Section */
+.result-category {
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.result-category h3 {
+    color: var(--accent-green);
+    margin-bottom: 15px;
+}
+
+/* Recommendations Section */
+.recommendations {
+    margin: 40px 0;
+    text-align: left; /* Align text left */
+}
+
+.recommendations h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.recommendation-item {
+    background-color: #f5f5f5; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+    border-left: 4px solid var(--accent-green); /* Accent green left border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+
+.recommendation-item h4 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.recommendation-item p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    /* Ensure text wraps */
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+/* Status message for Formspree */
+.formspree-status {
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.result-actions {
+    margin-top: 50px;
+}
+
+.result-actions p {
+    margin-bottom: 20px;
+}
+
+.result-actions .btn {
+    margin: 0 10px;
+}
+
+/* Error styling */
+.error {
+    border-color: red !important;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.question-group.error {
+    border-bottom-color: red;
+}
+
+.question-group.error > p:last-of-type {
+    margin-bottom: 5px; /* Reduce margin before error message */
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .climat-tool-intro {
+        flex-direction: column;
+    }
+    
+    .climat-image {
+        max-width: 80%;
+        margin-bottom: 30px;
+    }
+    
+    .results-summary {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .climat-hero {
+        padding: 150px 0 60px;
+    }
+    
+    .climat-hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .climat-hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .climat-form {
+        padding: 30px 20px;
+    }
+    
+    .rating-scale {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-buttons button {
+        width: 100%;
+    }
+    
+    .result-actions .btn {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .climat-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .climat-image {
+        max-width: 100%;
+    }
+    
+    .score-circle {
+        width: 120px;
+        height: 120px;
+        font-size: 2rem;
+    }
+}
+
