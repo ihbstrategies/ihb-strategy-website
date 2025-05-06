@@ -443,11 +443,11 @@ img {
 }
 
 /* CLIMAT Hero Section */
-.climat-hero {
+/*.climat-hero {
     padding-top: 120px; 
     background-color: var(--secondary-color);
     padding-bottom: 60px;
-}
+}*/
 
 /* Tool Section */
 .tool {
