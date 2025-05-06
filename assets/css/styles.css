@@ -442,6 +442,13 @@ img {
     color: var(--text-gray);
 }
 
+/* CLIMAT Hero Section */
+.climat-hero {
+    padding-top: 120px; 
+    background-color: var(--secondary-color);
+    padding-bottom: 60px;
+}
+
 /* Tool Section */
 .tool {
     padding: var(--section-spacing) 0;
