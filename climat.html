@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IHB Strategy | CLIMAT Tool - Autoavaliação</title>
+    <meta name="description" content="A IHB Strategy oferece uma visão rápida para você avaliar seus processos e tecnologias que você utiliza na sua empresa através da autoavaliação com a ferramenta CLIMAT.">
+
+    <!-- Open Graph / Facebook / LinkedIn etc. -->
+    <meta property="og:title" content="IHB Strategy | CLIMAT Tool - Autoavaliação" />
+    <meta property="og:description" content="Avalie seus processos e tecnologias através da autoavaliação com a ferramenta CLIMAT." />
+    <meta property="og:image" content="https://www.ihbstrategies.com/assets/images/thumbnails/social-thumbnail-climat.png" />
+    <meta property="og:url" content="https://www.ihbstrategies.com/climat.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IHB Strategy | CLIMAT Tool - Autoavaliação" />
+    <meta name="twitter:description" content="Avalie seus processos e tecnologias que você utiliza na sua empresa através da autoavaliação com a ferramenta CLIMAT." />
+    <meta name="twitter:image" content="https://www.ihbstrategies.com/assets/images/thumbnails/social-thumbnail-climat-large.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="icon" href="assets/images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+
+    <!-- Fontes e CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/icons.css">
+    <link rel="stylesheet" href="assets/css/climat-tool.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ58D6ZMM3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FJ58D6ZMM3');
+    </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/Logo sem slogan sem fundo.png" alt="IHB Strategy Logo" />
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">Sobre</a></li>
+          <li><a href="servicos-saude.html">Serviços de Saúde</a></li>
+          <li><a href="healthtechs.html">Healthtechs</a></li>
+          <li><a href="climat.html">CLIMAT</a></li>
+          <li><a href="index.html#contact">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="climat-hero">
+    <div class="container">
+      <div class="climat-hero-content">
+        <div class="climat-hero-image">
+          <img src="assets/images/climat-hero.webp" alt="Profissional de saúde analisando dados" />
+        </div>
+        <div class="climat-hero-text">
+          <h1>CLIMAT 2.0</h1>
+          <p class="climat-hero-lead">A avaliação proprietária da IHB para medir a maturidade do seu negócio de saúde.</p>
+          <p>O CLIMAT analisa dois eixos — <strong>Tecnologia &amp; Automações</strong> e <strong>Processos &amp; Operações</strong> — e entrega um score de maturidade, o seu perfil e recomendações personalizadas. Leva menos de 5 minutos.</p>
+          <button type="button" id="btnIniciarClimat" class="btn">Iniciar Avaliação</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOL SECTION -->
+  <section class="climat-tool" id="climatTool" hidden>
+    <div class="container">
+
+      <!-- FORM -->
+      <div class="climat-form">
+        <form id="climatForm" action="#" method="POST">
+
+          <!-- SEÇÃO 1: Informações Básicas -->
+          <div class="form-section active" id="section-info">
+            <h3>Informações Básicas</h3>
+            <p class="section-description">Antes de começar, conte-nos um pouco sobre você e seu negócio.</p>
+
+            <div class="info-grid">
+            <div class="form-group">
+              <label for="clinic_name">Nome da Clínica/Consultório</label>
+              <input type="text" id="clinic_name" name="clinic_name" placeholder="Nome da Clínica/Consultório" required />
+            </div>
+            <div class="form-group">
+              <label for="user_name">Seu Nome</label>
+              <input type="text" id="user_name" name="user_name" placeholder="Seu Nome" required />
+            </div>
+            <div class="form-group">
+              <label for="user_role">Seu Cargo</label>
+              <input type="text" id="user_role" name="user_role" placeholder="Ex: Diretor, Sócio, Gerente" required />
+            </div>
+            <div class="form-group">
+              <label for="user_email">E-mail</label>
+              <input type="email" id="user_email" name="email" placeholder="seu@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="user_phone">Telefone</label>
+              <input type="tel" id="user_phone" name="phone" placeholder="(11) 99999-9999" />
+            </div>
+            <div class="form-group">
+              <label for="clinic_size">Tamanho da Clínica</label>
+              <select id="clinic_size" name="clinic_size" required>
+                <option value="">Selecione uma opção</option>
+                <option value="small">Pequena (1–10 profissionais)</option>
+                <option value="medium">Média (11–30 profissionais)</option>
+                <option value="large">Grande (mais de 30 profissionais)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="specialty">Especialidade Principal</label>
+              <input type="text" id="specialty" name="specialty" placeholder="Ex: Cardiologia, Ortopedia, Clínica Geral" required />
+            </div>
+            </div><!-- /.info-grid -->
+
+            <div class="form-buttons">
+              <div></div>
+              <button type="button" class="btn btn-primary btn-next">Próximo →</button>
+            </div>
+          </div>
+
+          <!-- SEÇÃO 2: Tecnologia -->
+          <div class="form-section" id="section-tech">
+            <h3>Tecnologia e Automações</h3>
+            <p class="section-description">Avalie o nível de adoção e integração tecnológica do seu negócio. Escolha a opção que melhor descreve sua realidade atual.</p>
+
+            <!-- Q1 -->
+            <div class="question-group">
+              <h4>1. Sistema de Gestão Clínica</h4>
+              <p>Qual o nível de adoção de sistemas para gestão de agendamento, prontuário eletrônico e faturamento?</p>
+              <div class="rating-scale">
+                <div class="rating-option">
+                  <input type="radio" name="q1" id="q1_1" value="1" />
+                  <label for="q1_1">1</label>
+                  <div class="tooltip">Processos majoritariamente manuais, sem sistema integrado</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q1" id="q1_2" value="2" />
+                  <label for="q1_2">2</label>
+                  <div class="tooltip">Sistemas básicos, com pouca integração</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q1" id="q1_3" value="3" />
+                  <label for="q1_3">3</label>
+                  <div class="tooltip">Sistemas parcialmente integrados</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q1" id="q1_4" value="4" />
+                  <label for="q1_4">4</label>
+                  <div class="tooltip">Sistemas bem integrados, com algumas limitações</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q1" id="q1_5" value="5" />
+                  <label for="q1_5">5</label>
+                  <div class="tooltip">Sistema totalmente integrado e otimizado</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="question-group">
+              <h4>2. Integração de Dados</h4>
+              <p>Como você avalia a integração de dados entre diferentes sistemas e departamentos?</p>
+              <div class="rating-scale">
+                <div class="rating-option">
+                  <input type="radio" name="q2" id="q2_1" value="1" />
+                  <label for="q2_1">1</label>
+                  <div class="tooltip">Dados isolados em silos, sem integração</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q2" id="q2_2" value="2" />
+                  <label for="q2_2">2</label>
+                  <div class="tooltip">Integração manual e esporádica</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q2" id="q2_3" value="3" />
+                  <label for="q2_3">3</label>
+                  <div class="tooltip">Integração parcial entre alguns sistemas</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q2" id="q2_4" value="4" />
+                  <label for="q2_4">4</label>
+                  <div class="tooltip">Boa integração entre a maioria dos sistemas</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q2" id="q2_5" value="5" />
+                  <label for="q2_5">5</label>
+                  <div class="tooltip">Integração completa e automática</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="question-group">
+              <h4>3. Dashboards e Relatórios</h4>
+              <p>Como você avalia a disponibilidade e uso de dashboards e relatórios para tomada de decisão?</p>
+              <div class="rating-scale">
+                <div class="rating-option">
+                  <input type="radio" name="q3" id="q3_1" value="1" />
+                  <label for="q3_1">1</label>
+                  <div class="tooltip">Sem dashboards ou relatórios estruturados</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q3" id="q3_2" value="2" />
+                  <label for="q3_2">2</label>
+                  <div class="tooltip">Relatórios básicos, gerados manualmente</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q3" id="q3_3" value="3" />
+                  <label for="q3_3">3</label>
+                  <div class="tooltip">Alguns dashboards automatizados</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q3" id="q3_4" value="4" />
+                  <label for="q3_4">4</label>
+                  <div class="tooltip">Bons dashboards, utilizados regularmente</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q3" id="q3_5" value="5" />
+                  <label for="q3_5">5</label>
+                  <div class="tooltip">Dashboards avançados, em tempo real e personalizáveis</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="question-group">
+              <h4>4. Automação de Processos</h4>
+              <p>Qual o nível de automação de processos repetitivos na sua operação?</p>
+              <div class="rating-scale">
+                <div class="rating-option">
+                  <input type="radio" name="q4" id="q4_1" value="1" />
+                  <label for="q4_1">1</label>
+                  <div class="tooltip">Processos totalmente manuais</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q4" id="q4_2" value="2" />
+                  <label for="q4_2">2</label>
+                  <div class="tooltip">Automação mínima de processos simples</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q4" id="q4_3" value="3" />
+                  <label for="q4_3">3</label>
+                  <div class="tooltip">Automação parcial de processos importantes</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q4" id="q4_4" value="4" />
+                  <label for="q4_4">4</label>
+                  <div class="tooltip">Boa automação da maioria dos processos</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q4" id="q4_5" value="5" />
+                  <label for="q4_5">5</label>
+                  <div class="tooltip">Automação avançada de praticamente todos os processos</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="question-group">
+              <h4>5. Tecnologias Avançadas</h4>
+              <p>Como você avalia a adoção de tecnologias avançadas como IA, machine learning ou análise preditiva?</p>
+              <div class="rating-scale">
+                <div class="rating-option">
+                  <input type="radio" name="q5" id="q5_1" value="1" />
+                  <label for="q5_1">1</label>
+                  <div class="tooltip">Sem adoção de tecnologias avançadas</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q5" id="q5_2" value="2" />
+                  <label for="q5_2">2</label>
+                  <div class="tooltip">Exploração inicial ou testes pontuais</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q5" id="q5_3" value="3" />
+                  <label for="q5_3">3</label>
+                  <div class="tooltip">Adoção em algumas áreas específicas</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q5" id="q5_4" value="4" />
+                  <label for="q5_4">4</label>
+                  <div class="tooltip">Uso regular em várias áreas, com resultados</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q5" id="q5_5" value="5" />
+                  <label for="q5_5">5</label>
+                  <div class="tooltip">Tecnologias avançadas integradas à estratégia</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" class="btn btn-secondary btn-prev">← Anterior</button>
+              <button type="button" class="btn btn-primary btn-next">Próximo →</button>
+            </div>
+          </div>
+
+          <!-- SEÇÃO 3: Processos -->
+          <div class="form-section" id="section-process">
+            <h3>Processos e Operações</h3>
+            <p class="section-description">Avalie a maturidade dos processos operacionais e de gestão do seu negócio.</p>
+
+            <!-- Q6 -->
+            <div class="question-group">
+              <h4>6. Mapeamento de Processos</h4>
+              <p>Os processos críticos da clínica (agendamento, atendimento, faturamento, etc.) estão mapeados e documentados?</p>
+              <div class="rating-scale">
+                <div class="rating-option">
+                  <input type="radio" name="q6" id="q6_1" value="1" />
+                  <label for="q6_1">1</label>
+                  <div class="tooltip">Processos não mapeados ou documentados</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q6" id="q6_2" value="2" />
+                  <label for="q6_2">2</label>
+                  <div class="tooltip">Mapeamento informal ou desatualizado</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q6" id="q6_3" value="3" />
+                  <label for="q6_3">3</label>
+                  <div class="tooltip">Mapeamento parcial dos processos críticos</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q6" id="q6_4" value="4" />
+                  <label for="q6_4">4</label>
+                  <div class="tooltip">Maioria dos processos mapeados e documentados</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q6" id="q6_5" value="5" />
+                  <label for="q6_5">5</label>
+                  <div class="tooltip">Todos os processos críticos mapeados, documentados e revisados</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q7 -->
+            <div class="question-group">
+              <h4>7. Padronização de Processos</h4>
+              <p>Como você avalia a padronização dos processos entre diferentes profissionais e unidades?</p>
+              <div class="rating-scale">
+                <div class="rating-option">
+                  <input type="radio" name="q7" id="q7_1" value="1" />
+                  <label for="q7_1">1</label>
+                  <div class="tooltip">Sem padronização, cada um faz de um jeito</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q7" id="q7_2" value="2" />
+                  <label for="q7_2">2</label>
+                  <div class="tooltip">Padronização mínima em alguns processos</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q7" id="q7_3" value="3" />
+                  <label for="q7_3">3</label>
+                  <div class="tooltip">Padronização parcial, com variações</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q7" id="q7_4" value="4" />
+                  <label for="q7_4">4</label>
+                  <div class="tooltip">Boa padronização na maioria dos processos</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q7" id="q7_5" value="5" />
+                  <label for="q7_5">5</label>
+                  <div class="tooltip">Processos totalmente padronizados e seguidos</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q8 -->
+            <div class="question-group">
+              <h4>8. Monitoramento de Desempenho</h4>
+              <p>Como você avalia o monitoramento contínuo do desempenho dos processos e indicadores?</p>
+              <div class="rating-scale">
+                <div class="rating-option">
+                  <input type="radio" name="q8" id="q8_1" value="1" />
+                  <label for="q8_1">1</label>
+                  <div class="tooltip">Sem monitoramento sistemático</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q8" id="q8_2" value="2" />
+                  <label for="q8_2">2</label>
+                  <div class="tooltip">Monitoramento esporádico e reativo</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q8" id="q8_3" value="3" />
+                  <label for="q8_3">3</label>
+                  <div class="tooltip">Monitoramento regular de alguns indicadores</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q8" id="q8_4" value="4" />
+                  <label for="q8_4">4</label>
+                  <div class="tooltip">Monitoramento sistemático da maioria dos indicadores</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q8" id="q8_5" value="5" />
+                  <label for="q8_5">5</label>
+                  <div class="tooltip">Monitoramento contínuo, proativo e integrado à gestão</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q9 -->
+            <div class="question-group">
+              <h4>9. Melhoria Contínua</h4>
+              <p>Existe uma cultura e processos estabelecidos para a melhoria contínua das operações?</p>
+              <div class="rating-scale">
+                <div class="rating-option">
+                  <input type="radio" name="q9" id="q9_1" value="1" />
+                  <label for="q9_1">1</label>
+                  <div class="tooltip">Sem foco em melhoria contínua</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q9" id="q9_2" value="2" />
+                  <label for="q9_2">2</label>
+                  <div class="tooltip">Melhorias pontuais e reativas</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q9" id="q9_3" value="3" />
+                  <label for="q9_3">3</label>
+                  <div class="tooltip">Algumas iniciativas de melhoria estruturadas</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q9" id="q9_4" value="4" />
+                  <label for="q9_4">4</label>
+                  <div class="tooltip">Cultura de melhoria contínua em desenvolvimento</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q9" id="q9_5" value="5" />
+                  <label for="q9_5">5</label>
+                  <div class="tooltip">Melhoria contínua incorporada à cultura e processos</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q10 -->
+            <div class="question-group">
+              <h4>10. Gestão de Riscos e Qualidade</h4>
+              <p>Como você avalia a gestão de riscos clínicos e operacionais e a busca por certificações de qualidade?</p>
+              <div class="rating-scale">
+                <div class="rating-option">
+                  <input type="radio" name="q10" id="q10_1" value="1" />
+                  <label for="q10_1">1</label>
+                  <div class="tooltip">Gestão de riscos e qualidade inexistente ou informal</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q10" id="q10_2" value="2" />
+                  <label for="q10_2">2</label>
+                  <div class="tooltip">Ações básicas de segurança do paciente</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q10" id="q10_3" value="3" />
+                  <label for="q10_3">3</label>
+                  <div class="tooltip">Processos de gestão de riscos em desenvolvimento</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q10" id="q10_4" value="4" />
+                  <label for="q10_4">4</label>
+                  <div class="tooltip">Boa gestão de riscos e qualidade, busca por certificações</div>
+                </div>
+                <div class="rating-option">
+                  <input type="radio" name="q10" id="q10_5" value="5" />
+                  <label for="q10_5">5</label>
+                  <div class="tooltip">Gestão de riscos e qualidade avançada, certificações obtidas</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" class="btn btn-secondary btn-prev">← Anterior</button>
+              <button type="submit" class="btn btn-primary">Enviar Avaliação ✓</button>
+            </div>
+          </div>
+
+          <!-- SEÇÃO 4: Resultados -->
+          <div class="form-section" id="results">
+            <h3>Resultados da Avaliação CLIMAT</h3>
+
+            <div class="results-summary">
+              <div class="result-score">
+                <div class="score-circle" id="totalScore">—</div>
+                <h4>Score Total</h4>
+              </div>
+              <div class="result-details">
+                <div class="result-axis">
+                  <h4>Tecnologia e Automações: <span id="techScore">—</span>/25</h4>
+                  <div class="score-bar">
+                    <div class="score-fill" id="techScoreFill" style="width:0%"></div>
+                  </div>
+                </div>
+                <div class="result-axis">
+                  <h4>Processos e Operações: <span id="processScore">—</span>/25</h4>
+                  <div class="score-bar">
+                    <div class="score-fill" id="processScoreFill" style="width:0%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="result-category">
+              <h3 id="profileLabel">Calculando perfil...</h3>
+              <p id="profileDescription"></p>
+            </div>
+
+            <div class="recommendations">
+              <h4>Recomendações Personalizadas</h4>
+              <div id="recommendationsList"></div>
+            </div>
+
+            <div class="result-actions">
+              <h3>Próximos Passos</h3>
+              <p>Gostaria de discutir seus resultados e como a IHB Strategy pode ajudar seu negócio a evoluir?</p>
+              <button type="button" id="btnDownloadPDF" class="btn btn-primary">Baixar Relatório em PDF</button>
+              <button type="button" class="btn btn-secondary js-contato" data-segment="saude">Falar com a IHB</button>
+            </div>
+          </div>
+
+        </form>
+      </div><!-- /.climat-form -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/images/Logo_cores_invertidas_final.png" alt="IHB Strategy Logo" />
+          <p>Where insights become Healthcare impact</p>
+        </div>
+        <div class="footer-links">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Sobre</a></li>
+            <li><a href="servicos-saude.html">Serviços de Saúde</a></li>
+            <li><a href="healthtechs.html">Healthtechs</a></li>
+            <li><a href="climat.html">Ferramenta CLIMAT</a></li>
+            <li><a href="pricing-saude.html">Jornadas de Saúde</a></li>
+            <li><a href="pricing-healthtech.html">Planos Healthtechs</a></li>
+            <li><a href="index.html#contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contato</h3>
+          <p><strong>E-mail:</strong> <a href="mailto:ihb@ihbstrategies.com">ihb@ihbstrategies.com</a></p>
+          <p><strong>Telefone:</strong> <a href="tel:+5511998483317">(011) 99848-3317</a></p>
+        </div>
+        <div class="footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Inscreva-se para receber novidades e conteúdos exclusivos.</p>
+          <div class="form-group">
+            <input type="email" placeholder="Seu e-mail" />
+            <button type="button" class="btn">Inscrever</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 IHB Strategy. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COOKIE CONSENT -->
+  <div class="cookie-consent">
+    <p>Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#">Política de Privacidade</a>.</p>
+    <div class="cookie-buttons">
+      <button class="btn-accept">Aceitar</button>
+      <button class="btn-decline">Recusar</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/climat-tool.js"></script>
+  <script src="assets/js/modal.js"></script>
+</body>
+</html>
