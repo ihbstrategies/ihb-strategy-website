@@ -1,0 +1,14 @@
+# --- Backoffice / AppScript — NUNCA vai para o GitHub Pages ---
+_backoffice/
+
+# --- Lixo do macOS / Google Drive ---
+.DS_Store
+**/.DS_Store
+Icon?
+.Spotlight-V100
+.Trashes
+
+# --- Git corrompido legado (bug EDEADLK do Drive) ---
+# .git de pastas antigas nao deve ser versionado aqui
+*.tmp
+*~
