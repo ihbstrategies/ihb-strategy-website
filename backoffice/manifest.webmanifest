@@ -1,0 +1,24 @@
+{
+  "name": "IHB Backoffice",
+  "short_name": "IHB Backoffice",
+  "description": "CRM e intranet da IHB Strategies.",
+  "icons": [
+    {
+      "src": "https://www.ihbstrategies.com/assets/images/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://www.ihbstrategies.com/assets/images/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#2F3E38",
+  "background_color": "#F3F0E6",
+  "display": "standalone",
+  "scope": "/backoffice/",
+  "start_url": "/backoffice/"
+}

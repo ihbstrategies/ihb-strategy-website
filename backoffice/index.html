@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>IHB Backoffice</title>
+
+  <!-- Não indexar o painel administrativo -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- App em tela cheia (iOS / Android / macOS) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="IHB Backoffice" />
+  <meta name="application-name" content="IHB Backoffice" />
+  <meta name="theme-color" content="#2F3E38" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- Ícones (servidos do próprio domínio → tela inicial usa o logo IHB) -->
+  <link rel="icon" href="https://www.ihbstrategies.com/assets/images/favicon/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="https://www.ihbstrategies.com/assets/images/favicon/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.ihbstrategies.com/assets/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.ihbstrategies.com/assets/images/favicon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="https://www.ihbstrategies.com/assets/images/favicon/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.ihbstrategies.com/assets/images/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <style>
+    :root { --primary: #2F3E38; --bege: #F3F0E6; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; background: #fff; overflow: hidden; }
+    /* topo seguro (notch / status bar) com a cor da topbar do backoffice */
+    .safe-top {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: env(safe-area-inset-top, 0px);
+      background: #fff; z-index: 3;
+    }
+    .frame-wrap {
+      position: fixed; inset: 0;
+      padding-top: env(safe-area-inset-top, 0px);
+      background: #fff;
+    }
+    iframe {
+      width: 100%; height: 100%;
+      border: 0; display: block;
+    }
+    /* estado de carregamento — escondido quando o iframe carrega */
+    .loader {
+      position: fixed; inset: 0; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 18px; background: var(--bege);
+      transition: opacity .4s ease;
+    }
+    .loader.hide { opacity: 0; pointer-events: none; }
+    .loader img { width: 96px; height: auto; }
+    .loader .sp {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 3px solid rgba(47,62,56,.2); border-top-color: var(--primary);
+      animation: spin .8s linear infinite;
+    }
+    .loader p { color: var(--primary); font: 600 14px/1.4 'Inter', system-ui, sans-serif; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="safe-top"></div>
+
+  <div class="loader" id="loader">
+    <img src="https://www.ihbstrategies.com/assets/images/Logo%20sem%20slogan%20sem%20fundo.png" alt="IHB" />
+    <div class="sp"></div>
+    <p>Carregando o backoffice…</p>
+  </div>
+
+  <div class="frame-wrap">
+    <iframe
+      id="bof"
+      src="https://script.google.com/macros/s/AKfycby7e4PCvF5n6bGewwDAU0DJ3iBfZw-zvuhMwx6UNfbGhZrp6ELMjkVhJtI5UC4t7uXUuQ/exec"
+      allow="clipboard-write; clipboard-read"
+      title="IHB Backoffice"></iframe>
+  </div>
+
+  <script>
+    // Esconde o loader quando o iframe terminar de carregar (com fallback de tempo).
+    var fr = document.getElementById('bof');
+    var ld = document.getElementById('loader');
+    function done(){ ld.classList.add('hide'); }
+    fr.addEventListener('load', done);
+    setTimeout(done, 6000); // fallback: some mesmo se o evento load não disparar
+  </script>
+</body>
+</html>
